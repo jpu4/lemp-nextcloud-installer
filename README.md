@@ -8,4 +8,4 @@ Assuming the following are installed
 * mysql
 * php
 
-Installs pre-reqs and interacts with admin to gather required data to create database, users, folders, etc. It will prompt suggestions as well as generate passwords with an option to copy the data in markdown before continuing.
+Installs pre-reqs including Let's encrypt certbot and interacts with admin to gather required data to create database, users, folders, etc. It will prompt suggestions as well as generate passwords with an option to copy the data in markdown before continuing.

@@ -136,7 +136,8 @@ chmod 0770 $ncDataDir
 
 # php -i | grep memory_limit
 /usr/bin/sed -i -e "s|;user_ini.filename = ".user.ini"|user_ini.filename = ".user.ini"|g" /etc/php.ini
-/usr/bin/sed -i -e "s|memory_limit=128M|memory_limit=512M|g" /etc/php.ini
+/usr/bin/sed -i -e "s|memory_limit = 128M|memory_limit = 512M|g" /etc/php.ini
+systemctl restart php-fpm
 
 # Create database and user
 mysql -u root -e "CREATE DATABASE $dbName;"

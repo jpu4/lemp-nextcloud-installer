@@ -103,6 +103,12 @@ while true; do
     esac
 done
 
+# fix solution ref: https://stackoverflow.com/questions/37702595/owncloud-setup-sqlstatehy0001045-access-denied-for-user-owncloudlocalhos
+if [ $dbHost = 'localhost' ]
+then
+    dbHost="127.0.0.1"
+fi
+
 # Use the official nextcloud nginx conf file and find and replace hostname and documentroot
 cp nginx-official-nextcloud.conf $confDir/nextcloud-$hostName.conf
 /usr/bin/sed -i -e "s|HOSTNAME|$hostName|g" $confDir/nextcloud-$hostName.conf

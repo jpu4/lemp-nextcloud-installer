@@ -10,16 +10,16 @@ yum-config-manager --enable rhui-REGION-rhel-server-extras rhui-REGION-rhel-serv
 yum install certbot python2-certbot-nginx
 
 # For use with vultr blockstorage
-mkdir /mnt/block100
-echo >> /etc/fstab
-echo /dev/vdb1               /mnt/block100       ext4    defaults,noatime,nofail 0 0 >> /etc/fstab
-mount /mnt/block100
+# mkdir /mnt/block100
+# echo >> /etc/fstab
+# echo /dev/vdb1               /mnt/block100       ext4    defaults,noatime,nofail 0 0 >> /etc/fstab
+# mount /mnt/block100
 
 while true; do
     
-# ref: https://docs.nextcloud.com/server/15/admin_manual/installation/command_line_installation.html
+# ref: https://docs.nextcloud.com/server/20/admin_manual/installation/command_line_installation.html
 
-    ncReleaseFile="nextcloud-15.0.5.zip"
+    ncReleaseFile="nextcloud-20.0.2.zip"
     ncReleaseURL="https://download.nextcloud.com/server/releases/$ncReleaseFile"
     filedateTS=`date '+%Y%m%d-%H%M%S'`
     dateTS=`date '+%Y-%m-%d-%H:%M:%S'`
